@@ -1,0 +1,13 @@
+# Node dependencies
+node_modules
+
+# Logs
+logs
+*.log
+
+
+
+# Ignorar archivos de entorno
+.env
+.env.local
+
