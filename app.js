@@ -274,6 +274,9 @@ const main = async () => {
   });
 
   QRPortalWeb();
+  setInterval(() => {
+    console.log("Bot activo: evitando suspensión...");
+  }, 300000); // Cada 5 minutos
 };
 
 main();
