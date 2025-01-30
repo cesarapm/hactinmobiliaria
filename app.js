@@ -78,7 +78,7 @@ const flowcontinuar = addKeyword([
             "X-Authorization": 'bsytg8rgtuuhm952r71yp0lxs9y46k',
           },
           data: {
-            name: nombreE,
+            name: String(nombreE),
             phone: telefono,
             email: correo,
             source: "Whatsapp ChatBot",
@@ -165,7 +165,7 @@ const flowFormulario = addKeyword([
             "X-Authorization": 'bsytg8rgtuuhm952r71yp0lxs9y46k',
           },
           data: {
-            name: nombreE,
+            name: String(nombreE),
             phone: telefono,
             email: correo,
             source: "Whatsapp ChatBot",
@@ -216,23 +216,30 @@ const flowPrincipal = addKeyword([
       "Gracias por comunicarte a \n*Tu Patrimonio Inmobiliaria* 🏚️🏘️ \nte atiende con gustó *Susie*.\n",
     ],
     null,
-    async (ctx, { flowDynamic, endFlow }) => {
+    async (ctx, { flowDynamic }) => {
       const mensaje = ctx.body; // Capturamos el mensaje del usuario
 
       // Expresión regular para detectar URLs en el mensaje
       const contieneURL = mensaje.match(/https?:\/\/[^\s]+/i);
 
       if (contieneURL) {
-        // Respuesta específica si se detecta una URL
-
+        
         telefono = ctx.from;
         nombreE = ctx.pushName;
 
         url = contieneURL;
-        await flowDynamic({
-          body: "Porfavor escribe *registrame* para continuar con el proceso.",
-          delay: 700,
-        });
+
+
+ 
+        await flowDynamic([
+          {
+            body: "Porfavor escribe *registrame* para continuar con el proceso.",
+            delay: 700,
+          },
+        ]);
+
+
+   
       } else {
         // Respuesta genérica para otros mensajes
         telefono = ctx.from;
