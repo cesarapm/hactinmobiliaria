@@ -45,15 +45,11 @@ const flowcontinuar = addKeyword([
     "Para darte un mejor \nservicio, podrías \nproporcionarme la \nsiguiente información 💾",
   ])
   .addAnswer(
-    [`Escribe tu *Correo Electrónico*:`],
+    [`Escribe tu *Nombre*:`],
     { capture: true },
     async (ctx, { fallBack }) => {
       correo = ctx.body;
-      // Verificamos si el correo es válido
-      if (!ctx.body.includes("@")) {
-        // console.log("no es correo");
-        return fallBack("Por favor, ingresa un correo electrónico válido."); // Detenemos el flujo hasta que se ingrese un correo válido
-      }
+
       // // Guardamos el correo y mostramos los datos completos
     }
   )
@@ -80,7 +76,6 @@ const flowcontinuar = addKeyword([
           data: {
             name: String(nombreE),
             phone: telefono,
-            email: correo,
             source: "Whatsapp ChatBot",
             message: `Estoy interesado - ${mensaje}`,
           },
@@ -102,7 +97,7 @@ const flowcontinuar = addKeyword([
       }
 
       await flowDynamic(
-        `¡Gracias!\n\n- *Nombre*: ${nombreE}\n- *Correo*: ${correo}\n\n¡Gracias por registrarte!`
+        `¡Gracias!\n\n- *Nombre*: ${nombreE}\n\n¡Gracias por registrarte!`
       );
     }
   )
@@ -137,16 +132,12 @@ const flowFormulario = addKeyword([
     "Para darte un mejor \nservicio, podrías \nproporcionarme la \nsiguiente información 💾",
   ])
   .addAnswer(
-    [`Escribe tu *Correo Electrónico*:`],
+    [`Escribe tu *Nombre*:`],
     { capture: true },
     async (ctx, { fallBack }) => {
       correo = ctx.body;
       // Verificamos si el correo es válido
-      if (!ctx.body.includes("@")) {
-        // console.log("no es correo");
-        return fallBack("Por favor, ingresa un correo electrónico válido."); // Detenemos el flujo hasta que se ingrese un correo válido
-      }
-      // // Guardamos el correo y mostramos los datos completos
+
     }
   )
   .addAnswer(
@@ -167,7 +158,6 @@ const flowFormulario = addKeyword([
           data: {
             name: String(nombreE),
             phone: telefono,
-            email: correo,
             source: "Whatsapp ChatBot",
             message: `Estoy interesado en la propiedad ${url[0]} - ${mensaje}`,
           },
@@ -189,7 +179,7 @@ const flowFormulario = addKeyword([
       }
 
       await flowDynamic(
-        `¡Gracias!\n\n- *Nombre*: ${nombreE}\n- *Correo*: ${correo}\n\n¡Gracias por registrarte!`
+        `¡Gracias!\n\n- *Nombre*: ${nombreE}\n\n¡Gracias por registrarte!`
       );
     }
   )
@@ -205,9 +195,14 @@ const flowFormulario = addKeyword([
 
 const flowPrincipal = addKeyword([
   "hola",
+"hola,",
   "interesado",
   "información",
+  "informacion",
   "preguntas",
+  "recibir",
+  "gustaría",
+  "gustaria"
 ])
   // .addAnswer("")
   .addAnswer(
