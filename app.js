@@ -29,16 +29,20 @@ let nombreE = "";
 let mensaje = "";
 
 const flowcontinuar = addKeyword([
-  "continuar",
-  "seguir",
-  "continuemos",
-  "adelante",
-  "siguiente",
-  "prosigue",
-  "continúa",
-  "vamos",
-  "proceder",
-  "seguir adelante",
+  // "continuar",
+  // "seguir",
+  // "continuemos",
+  // "adelante",
+  // "siguiente",
+  // "prosigue",
+  // "continúa",
+  // "vamos",
+  // "proceder",
+  // "seguir adelante",
+  "ok",
+  "okk",
+  "ookk",
+  "okk"
 ])
   .addAnswer([
     "Hola!",
@@ -112,20 +116,12 @@ const flowcontinuar = addKeyword([
   );
 
 const flowFormulario = addKeyword([
-  "registrame",
-  "Registrarme",
-  "Regístrame",
-  "registrame",
-  "regitrame", // Error común de escritura
-  "registarme", // Error común de escritura
-  "registrarme", // Variante con tildes faltantes
-  "registro", // Para caso de error común o variante
-  "iniciar registro",
-  "empezar",
-  "comenzar", // Sinónimos
-  "sign up", // En caso de que usen un término en inglés
-  "inscribirme",
-  "inscripción", // Posibles términos que podrían usar
+
+"si",
+"sii",
+"ssi",
+"yes",
+"yea"
 ])
   .addAnswer([
     "Hola!",
@@ -228,7 +224,7 @@ const flowPrincipal = addKeyword([
  
         await flowDynamic([
           {
-            body: "Porfavor escribe *registrame* para continuar con el proceso.",
+            body: "Por favor escribe la palabra *SI* \nPara darle prioridad a tu mensaje \ny atenderte de inmediato",
             delay: 700,
           },
         ]);
@@ -242,7 +238,7 @@ const flowPrincipal = addKeyword([
 
         await flowDynamic([
           {
-            body: "Escribe *continuar* para que lo sigamos atendiendo.",
+            body: "Por favor escribe la palabra *OK* \nPara darle prioridad a tu mensaje \ny atenderte de inmediato",
             delay: 700,
           },
         ]);
