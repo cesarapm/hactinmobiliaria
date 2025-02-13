@@ -78,7 +78,7 @@ const flowcontinuar = addKeyword([
             "X-Authorization": 'bsytg8rgtuuhm952r71yp0lxs9y46k',
           },
           data: {
-            name: String(nombreE),
+            name: String(correo),
             phone: telefono,
             source: "Whatsapp ChatBot",
             message: `Estoy interesado - ${mensaje}`,
@@ -101,7 +101,7 @@ const flowcontinuar = addKeyword([
       }
 
       await flowDynamic(
-        `¡Gracias!\n\n- *Nombre*: ${nombreE}\n\n¡Gracias por registrarte!`
+        `¡Gracias!\n\n- *Nombre*: ${correo}\n\n¡Gracias por registrarte!`
       );
     }
   )
@@ -152,7 +152,7 @@ const flowFormulario = addKeyword([
             "X-Authorization": 'bsytg8rgtuuhm952r71yp0lxs9y46k',
           },
           data: {
-            name: String(nombreE),
+            name: String(correo),
             phone: telefono,
             source: "Whatsapp ChatBot",
             message: `Estoy interesado en la propiedad ${url[0]} - ${mensaje}`,
@@ -175,7 +175,7 @@ const flowFormulario = addKeyword([
       }
 
       await flowDynamic(
-        `¡Gracias!\n\n- *Nombre*: ${nombreE}\n\n¡Gracias por registrarte!`
+        `¡Gracias!\n\n- *Nombre*: ${correo}\n\n¡Gracias por registrarte!`
       );
     }
   )
