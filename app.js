@@ -29,16 +29,7 @@ let nombreE = "";
 let mensaje = "";
 
 const flowcontinuar = addKeyword([
-  // "continuar",
-  // "seguir",
-  // "continuemos",
-  // "adelante",
-  // "siguiente",
-  // "prosigue",
-  // "continúa",
-  // "vamos",
-  // "proceder",
-  // "seguir adelante",
+
   "ok",
   "okk",
   "ookk",
@@ -78,10 +69,10 @@ const flowcontinuar = addKeyword([
             "X-Authorization": 'bsytg8rgtuuhm952r71yp0lxs9y46k',
           },
           data: {
-            name: String(correo),
+            name: String(nombreE),
             phone: telefono,
             source: "Whatsapp ChatBot",
-            message: `Estoy interesado - ${mensaje}`,
+            message: `De: ${correo}\n\n${mensaje}`,
           },
         };
 
@@ -152,10 +143,10 @@ const flowFormulario = addKeyword([
             "X-Authorization": 'bsytg8rgtuuhm952r71yp0lxs9y46k',
           },
           data: {
-            name: String(correo),
+            name: String(nombreE),
             phone: telefono,
-            source: "Whatsapp ChatBot",
-            message: `Estoy interesado en la propiedad ${url[0]} - ${mensaje}`,
+            source: "Whatsapp ChatBot desde un provedor de anuncio",
+            message: `De: ${correo}\n\nEstoy interesado en la propiedad ${url[0]}\n${mensaje}`,
           },
         };
 
