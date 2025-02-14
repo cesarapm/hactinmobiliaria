@@ -29,7 +29,6 @@ let nombreE = "";
 let mensaje = "";
 
 const flowcontinuar = addKeyword([
-
   "ok",
   "okk",
   "ookk",
@@ -69,7 +68,7 @@ const flowcontinuar = addKeyword([
             "X-Authorization": 'bsytg8rgtuuhm952r71yp0lxs9y46k',
           },
           data: {
-            name: String(nombreE),
+            name: String(correo),
             phone: telefono,
             source: "Whatsapp ChatBot",
             message: `De: ${correo}\n\n${mensaje}`,
@@ -143,7 +142,7 @@ const flowFormulario = addKeyword([
             "X-Authorization": 'bsytg8rgtuuhm952r71yp0lxs9y46k',
           },
           data: {
-            name: String(nombreE),
+            name: String(correo),
             phone: telefono,
             source: "Whatsapp ChatBot desde un provedor de anuncio",
             message: `De: ${correo}\n\nEstoy interesado en la propiedad ${url[0]}\n${mensaje}`,
@@ -182,7 +181,7 @@ const flowFormulario = addKeyword([
 
 const flowPrincipal = addKeyword([
   "hola",
-"hola,",
+  "hola,",
   "interesado",
   "información",
   "informacion",
@@ -239,7 +238,7 @@ const flowPrincipal = addKeyword([
         // });
       }
 
-      // console.log("Mensaje recibido:", mensaje); // Para depuración
+
     },
     [flowGracias, flowFormulario, flowcontinuar] // Otros flujos que se integren
   );
